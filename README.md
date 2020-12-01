@@ -1,5 +1,6 @@
 # advent-of-code-2020
 solutions to puzzles at [advent of code](https://adventofcode.com) in kotlin
+
 more solutions of advent of code here: [Bogdanp/awesome-advent-of-code#awesome-advent-of-code](https://github.com/Bogdanp/awesome-advent-of-code#awesome-advent-of-code)
 
 ### day 1
