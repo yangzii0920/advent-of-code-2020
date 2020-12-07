@@ -2,7 +2,7 @@ import java.io.File
 
 class Day5 {
 
-    val seats = processInput()
+    private val seats = processInput()
 
     private fun processInput(): List<String> {
         val seats = mutableListOf<String>()
