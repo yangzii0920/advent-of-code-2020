@@ -7,6 +7,7 @@ class Day10 {
 
     private fun processInput(): List<Int> {
         val outputJoltage = mutableListOf<Int>()
+        outputJoltage.add(0)
         File("src/main/resources/Day10.input").forEachLine {
             outputJoltage.add(it.toInt())
         }
@@ -24,8 +25,22 @@ class Day10 {
         return diff[1] * diff[3]
     }
 
-    fun partTwo(): Int {
-        return -1
+    fun partTwo(): Long {
 
+        return countPathsToNum(outlets.last())
     }
+
+    private val counts = Array(outlets.size) { Long.MIN_VALUE }
+
+    private fun countPathsToNum(num: Int): Long {
+        val index = outlets.indexOf(num)
+        if (index == -1) return 0
+        if (index == 0) return 1
+
+        if (counts[index] != Long.MIN_VALUE) return counts[index]
+        val count = countPathsToNum(num - 1) + countPathsToNum(num - 2) + countPathsToNum(num - 3)
+        counts[index] = count
+        return count
+    }
+
 }
